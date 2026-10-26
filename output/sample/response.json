@@ -1,0 +1,58 @@
+{
+  "id": "chatcmpl-30963c8a-66fa-4c5c-8ce1-ccba47516429",
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "content": null,
+        "refusal": null,
+        "role": "assistant",
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "tool_calls": [
+          {
+            "id": "fc_e5dbe421-365a-4f91-b262-66b20ae25e92",
+            "function": {
+              "arguments": "{\"brand_impersonated\":\"GitHub\",\"brief_reason\":\"Email passes DKIM, SPF, and DMARC checks and contains only legitimate GitHub URLs, indicating it is a genuine security notification.\",\"is_phishing\":false,\"phishing_score\":1,\"rationales\":\"Authentication results show dkim=pass, spf=pass, dmarc=pass for github.com. The From address matches the domain (noreply@github.com). The body includes only GitHub-owned URLs (https://github.com/... and https://docs.github.com/...), no mismatched or shortened links. The content matches typical GitHub security alerts (verification code, device info). No signs of social engineering or malicious attachments.\"}",
+              "name": "print_phishing_result"
+            },
+            "type": "function"
+          }
+        ],
+        "reasoning": "We need to output structured result via function print_phishing_result. Determine if phishing. The email appears legitimate: headers show DKIM, SPF, DMARC pass, from noreply@github.com, proper domain, content typical of GitHub security email. No suspicious URLs (github.com). So likely legitimate. Phishing score low, maybe 1. Provide brand_impersonated \"GitHub\". brief_reason: email passes authentication and uses legitimate GitHub URLs, no suspicious links. is_phishing false. Provide rationales.\n\nLet's call function."
+      }
+    }
+  ],
+  "created": 1792514806,
+  "model": "openai/gpt-oss-120b",
+  "object": "chat.completion",
+  "metadata": null,
+  "moderation": null,
+  "service_tier": "on_demand",
+  "system_fingerprint": "fp_8ea50c0161",
+  "usage": {
+    "completion_tokens": 290,
+    "prompt_tokens": 1183,
+    "total_tokens": 1473,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 111,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": null,
+    "queue_time": 0.358530486,
+    "prompt_time": 0.308529486,
+    "completion_time": 0.6094709,
+    "total_time": 0.918000386
+  },
+  "usage_breakdown": null,
+  "x_groq": {
+    "id": "req_01m5d3akjrerab6prmxee263r1",
+    "seed": 1059837201
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "brand_impersonated": "GitHub",
+  "brief_reason": "Email passes DKIM, SPF, and DMARC checks and contains only legitimate GitHub URLs, indicating it is a genuine security notification.",
+  "is_phishing": false,
+  "phishing_score": 1,
+  "rationales": "Authentication results show dkim=pass, spf=pass, dmarc=pass for github.com. The From address matches the domain (noreply@github.com). The body includes only GitHub-owned URLs (https://github.com/... and https://docs.github.com/...), no mismatched or shortened links. The content matches typical GitHub security alerts (verification code, device info). No signs of social engineering or malicious attachments."
+}

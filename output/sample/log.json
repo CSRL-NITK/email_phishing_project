@@ -1,0 +1,11 @@
+{
+  "input": "sample.eml",
+  "provider": "Groq",
+  "model": "openai/gpt-oss-120b",
+  "mode": "simple",
+  "token_limit": 5000,
+  "started_at": "2026-10-20T16:46:45.065281+00:00",
+  "finished_at": "2026-10-20T16:46:46.693204+00:00",
+  "elapsed_seconds": 1.63,
+  "attempts": 1
+}
