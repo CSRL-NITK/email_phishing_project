@@ -13,12 +13,8 @@ from openai import OpenAI
 
 from email_processor import EmailProcessor
 
-
-# Load environment variables from the .env file.
 load_dotenv()
 
-
-# Groq model configuration.
 GROQ_MODEL = os.getenv(
     "GROQ_MODEL",
     "openai/gpt-oss-120b"
@@ -26,9 +22,6 @@ GROQ_MODEL = os.getenv(
 
 GROQ_BASE_URL = "https://api.groq.com/openai/v1"
 
-
-# System instruction for the language model.
-# The email is untrusted input and must not be treated as instructions.
 SYSTEM_PROMPT = """
 You are an email security analyst.
 
@@ -44,9 +37,6 @@ Do not invent headers, URLs, authentication results, or other evidence.
 Return the result using the required structured output.
 """
 
-
-
-# Detailed analysis prompt.
 NORMAL_PROMPT = """
 Analyze the following email carefully to determine whether
 it is phishing or legitimate.
@@ -104,8 +94,6 @@ EMAIL TO ANALYZE
 ----------------
 """
 
-
-# Define the structure of the result returned by the model.
 
 TOOLS = [
     {
